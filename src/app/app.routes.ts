@@ -1,4 +1,12 @@
 import { Routes } from '@angular/router';
+import { IdlePage } from './pages/idle/idle.page';
+import { CameraPage } from './pages/camera/camera.page';
+import { GeneratingPage } from './pages/generating/generating.page';
+import { PreviewPage } from './pages/preview/preview.page';
+import { RegisterPage } from './pages/register/register.page';
+import { QrPage } from './pages/qr/qr.page';
+import { ThanksPage } from './pages/thanks/thanks.page';
+import { CatalogPage } from './pages/catalog/catalog.page';
 
 export const routes: Routes = [
   {
@@ -8,37 +16,36 @@ export const routes: Routes = [
   },
   {
     path: 'idle',
-    loadComponent: () => import('./pages/idle/idle.page').then( m => m.IdlePage)
+    component: IdlePage
   },
   {
     path: 'camera',
-    loadComponent: () => import('./pages/camera/camera.page').then( m => m.CameraPage)
+    component: CameraPage
   },
   {
     path: 'generating',
-    loadComponent: () => import('./pages/generating/generating.page').then( m => m.GeneratingPage)
+    component: GeneratingPage
   },
   {
     path: 'preview',
-    loadComponent: () => import('./pages/preview/preview.page').then( m => m.PreviewPage)
+    component: PreviewPage
   },
   {
     path: 'register',
-    loadComponent: () => import('./pages/register/register.page').then( m => m.RegisterPage)
+    component: RegisterPage
   },
   {
     path: 'qr',
-    loadComponent: () => import('./pages/qr/qr.page').then( m => m.QrPage)
+    component: QrPage
   },
   {
     path: 'thanks',
-    loadComponent: () => import('./pages/thanks/thanks.page').then( m => m.ThanksPage)
+    component: ThanksPage
   },
   {
     path: 'catalog',
-    loadComponent: () => import('./pages/catalog/catalog.page').then(m => m.CatalogPage)
+    component: CatalogPage
   },
-  // EL COMODÍN SIEMPRE AL FINAL
   {
     path: '**',
     redirectTo: 'idle'
