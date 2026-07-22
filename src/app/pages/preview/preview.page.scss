@@ -1,0 +1,201 @@
+// Paleta Oaxaqueña Limpia y Consistente
+$oaxaca-bugambilia: #c2185b;
+$oaxaca-oro: #f57f17;
+$oaxaca-azul: #0277bd;
+$oaxaca-verde: #2e7d32;
+
+.guelaguetza-preview-content {
+  --background: linear-gradient(180deg, #fff9e6 0%, #fffbf5 50%, #fce4ec 100%);
+  color: #263238;
+}
+
+.kiosco-preview-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
+  padding: 24px 20px;
+  max-width: 680px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+// Header de Previsualización
+.preview-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+
+  .preview-chip {
+    background: #fff8e1;
+    color: #e65100;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    padding: 6px 18px;
+    border: 1.5px solid #ffb300;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(230, 81, 0, 0.12);
+
+    ion-icon {
+      color: #f57f17;
+      margin-right: 6px;
+      font-size: 1.1rem;
+    }
+  }
+
+  .preview-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #1a202c;
+    margin: 4px 0 2px 0;
+  }
+
+  .preview-subtitle {
+    font-size: 0.95rem;
+    color: #546e7a;
+    margin: 0;
+    font-weight: 500;
+  }
+}
+
+// Contenedor Visual unificado (Postal o QR)
+.preview-view-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+
+  .preview-frame-card {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border: 3px solid #ffffff;
+    padding: 8px;
+
+    // Cenefa superior oaxaqueña artesanal compartida
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #c2185b, #f57f17, #0277bd, #2e7d32);
+      z-index: 10;
+    }
+
+    .preview-img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  // 📱 Estilo específico para la tarjeta del QR adaptada
+  .qr-card-style {
+    padding: 30px 20px;
+    background: #ffffff;
+
+    .qr-content-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      .qr-title {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #1a202c;
+        margin: 0;
+      }
+
+      .qr-desc {
+        font-size: 0.9rem;
+        color: #64748b;
+        margin: 0 0 10px 0;
+      }
+
+      .qr-image-wrapper {
+        background: #f8fafc;
+        padding: 12px;
+        border-radius: 16px;
+        border: 2px dashed #e2e8f0;
+        display: inline-block;
+
+        .qr-img-final {
+          width: 200px;
+          height: 200px;
+          border-radius: 12px;
+          display: block;
+        }
+      }
+
+      .direct-download-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 12px;
+        color: #2e7d32;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 0.95srem;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #1b5e20;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Contenedor de Botones Inferiores
+.preview-actions-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 540px;
+
+  .action-btn {
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    margin: 0;
+    height: 54px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    --border-radius: 16px;
+
+    &.retake-btn {
+      --background: #fff3e0;
+      --background-hover: #ffe0b2;
+      --color: #e65100;
+      border: 1.5px solid #ffb300;
+    }
+
+    &.continue-btn {
+      --background: #2e7d32;
+      --background-hover: #1b5e20;
+      --box-shadow: 0 6px 20px rgba(46, 125, 50, 0.25);
+      color: #ffffff;
+    }
+    &.home-btn {
+      --background: #0277bd;
+      --background-hover: #01579b;
+      --box-shadow: 0 6px 20px rgba(2, 119, 189, 0.25);
+      color: #ffffff;
+    }
+  }
+}

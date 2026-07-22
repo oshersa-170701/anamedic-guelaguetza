@@ -1,0 +1,66 @@
+<ion-content class="guelaguetza-idle-content" fullscreen="true">
+  <div class="kiosco-wrapper" (click)="restartKiosk()">
+    
+    <!-- Header con Logo Institucional -->
+    <header class="kiosco-header">
+      <ion-chip class="edition-chip">
+        <ion-icon name="heart" ios="heart" md="heart"></ion-icon>
+        <ion-label>¡Muchas Gracias!</ion-label>
+      </ion-chip>
+      <img src="assets/img/logo1.png" alt="ANA Experience Logo" class="brand-logo" />
+    </header>
+
+    <!-- Título Principal y Subtítulo -->
+    <section class="hero-section">
+      <h1 class="hero-title">
+        ¡Así se vive <br>
+        <span class="text-gradient">la Guelaguetza!</span>
+      </h1>
+      <p class="hero-subtitle">
+        Gracias por vivir la <b>Guelaguetza IA Experience</b>.<br>
+        Antes de retirarte, te invitamos a conocer nuestra colección exclusiva inspirada en Oaxaca.
+      </p>
+    </section>
+
+    <!-- Tarjeta Central de Exposición (Colección Exclusiva) -->
+    <div class="features-section">
+      <div class="feature-card-custom">
+        
+        <!-- Fila Tazas -->
+        <div class="step-row">
+          <div class="icon-box pink">
+            <ion-icon name="cafe-outline"></ion-icon>
+          </div>
+          <div class="step-info">
+            <h3>Tazas Artesanales</h3>
+            <p>Diseños exclusivos con la magia y colorido de las tradiciones oaxaqueñas.</p>
+          </div>
+        </div>
+
+        <!-- Fila Tote Bags -->
+        <div class="step-row">
+          <div class="icon-box yellow">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+          </div>
+          <div class="step-info">
+            <h3>Tote Bags Exclusivas</h3>
+            <p>Lleva el arte y el folclor de Oaxaca contigo a donde quiera que vayas.</p>
+          </div>
+        </div>
+
+        <!-- Pie de tarjeta con Temporizador -->
+        <div class="time-footer">
+          <ion-icon name="time-outline"></ion-icon>
+          <span>El kiosco estará listo nuevamente en <b>{{ countdown }}</b> segundos</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer de Cierre -->
+    <footer class="kiosco-footer">
+      ANA Experience • Orgullo y Tradición Oaxaqueña
+    </footer>
+
+  </div>
+</ion-content>

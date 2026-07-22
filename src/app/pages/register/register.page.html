@@ -1,0 +1,52 @@
+<ion-content class="guelaguetza-register-content" fullscreen="true">
+  <div class="kiosco-register-wrapper">
+    
+    <!-- Encabezado Institucional -->
+    <header class="register-header">
+      <ion-chip class="register-chip">
+        <ion-icon name="phone-portrait" ios="phone-portrait" md="phone-portrait"></ion-icon>
+        <ion-label>Paso Final de Entrega</ion-label>
+      </ion-chip>
+      <img src="assets/img/logo1.png" alt="ANA Experience Logo" class="brand-logo" />
+      <h1 class="register-title">¿Dónde deseas recibir tu foto?</h1>
+      <p class="register-subtitle">
+        Escribe tu número de WhatsApp para enviarte tu postal de inmediato.
+      </p>
+    </header>
+
+    <!-- Tarjeta del Formulario de Entrada -->
+    <div class="register-card-container">
+      <div class="register-input-card">
+        <div class="input-label-hint">
+          <ion-icon name="logo-whatsapp" ios="logo-whatsapp" md="logo-whatsapp"></ion-icon>
+          <span>Número Celular (10 dígitos)</span>
+        </div>
+
+        <ion-input
+          type="tel"
+          placeholder="951 123 4567"
+          [value]="phone"
+          (ionInput)="onPhoneInput($event)"
+          maxlength="10"
+          class="custom-phone-input">
+        </ion-input>
+
+        <p class="input-helper-text">Tus datos están protegidos y solo se usarán para enviarte tu recuerdo.</p>
+      </div>
+    </div>
+
+    <!-- Contenedor de Botones de Acción -->
+    <footer class="register-actions-section">
+      <ion-button expand="block" shape="round" class="action-btn submit-btn" (click)="submitRegister()">
+        <ion-icon name="checkmark-circle" ios="checkmark-circle" md="checkmark-circle" slot="start"></ion-icon>
+        Generar Código QR
+      </ion-button>
+
+      <ion-button expand="block" shape="round" class="action-btn back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back" ios="arrow-back" md="arrow-back" slot="start"></ion-icon>
+        Regresar
+      </ion-button>
+    </footer>
+
+  </div>
+</ion-content>

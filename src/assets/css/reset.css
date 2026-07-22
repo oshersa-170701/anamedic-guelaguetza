@@ -1,0 +1,152 @@
+/*==========================================================
+  ANA EXPERIENCE AI
+  RESET CSS
+==========================================================*/
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    width:100%;
+    height:100%;
+
+    font-size:16px;
+
+    -webkit-text-size-adjust:100%;
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+    text-rendering:optimizeLegibility;
+
+    background:#000;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+video{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+}
+
+canvas{
+
+    display:block;
+
+}
+
+button{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    outline:none;
+
+    font-family:inherit;
+
+}
+
+input{
+
+    border:none;
+
+    outline:none;
+
+    font-family:inherit;
+
+}
+
+textarea{
+
+    resize:none;
+
+    outline:none;
+
+    font-family:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+.hidden{
+
+    display:none!important;
+
+}
+
+.flex{
+
+    display:flex;
+
+}
+
+.center{
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.fade{
+
+    opacity:0;
+
+}
+
+.show{
+
+    opacity:1;
+
+}

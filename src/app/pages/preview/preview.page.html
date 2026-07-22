@@ -1,0 +1,66 @@
+<ion-content class="guelaguetza-preview-content" fullscreen="true">
+  <div class="kiosco-preview-wrapper">
+    
+    <!-- Encabezado de Estado -->
+    <header class="preview-header">
+      <ion-chip class="preview-chip">
+        <ion-icon name="sparkles" ios="sparkles" md="sparkles"></ion-icon>
+        <ion-label>Postal Generada con Éxito</ion-label>
+      </ion-chip>
+      <h1 class="preview-title">¡Así luce tu fotografía!</h1>
+      <p class="preview-subtitle">
+        Revisa el resultado de tu fusión turística con la magia de Oaxaca.
+      </p>
+    </header>
+
+    <!-- Contenedor Principal (Ambas tarjetas existen, alternamos su visibilidad con clases CSS) -->
+    <div class="preview-view-container">
+      
+      <!-- 🖼️ Tarjeta de la Postal -->
+      <div class="preview-frame-card" [class.ion-hide]="isQrVisible">
+        <img [src]="aiImageUrl" class="preview-img" alt="Fotografía Final Oaxaqueña" />
+      </div>
+
+      <!-- 📱 Tarjeta del Código QR Estilizada -->
+      <div class="preview-frame-card qr-card-style" [class.ion-hide]="!isQrVisible">
+        <div class="qr-content-box">
+          <h3 class="qr-title">¡Escanea para descargar!</h3>
+          <p class="qr-desc">Lleva tu postal turística directo a tu celular</p>
+          
+          <div class="qr-image-wrapper">
+            <img [src]="qrCodeUrl" alt="Código QR de Descarga" class="qr-img-final" />
+          </div>
+
+          <a [href]="downloadLink" target="_blank" class="direct-download-link">
+            <ion-icon name="download-outline"></ion-icon> Abrir enlace de descarga directo
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Contenedor de Botones de Acción -->
+    <footer class="preview-actions-section">
+      <ion-button expand="block" shape="round" class="action-btn retake-btn" (click)="retakePhoto()">
+        <ion-icon name="camera-reverse" ios="camera-reverse" md="camera-reverse" slot="start"></ion-icon>
+        Tomar Otra
+      </ion-button>
+
+      <!-- Botón para generar el QR (se oculta usando ion-hide cuando el QR ya es visible) -->
+      <ion-button expand="block" shape="round" class="action-btn continue-btn" [class.ion-hide]="isQrVisible" (click)="generateQRCode()" [disabled]="isLoadingQr">
+        <!-- Spinner controlado con ion-hide en lugar de *ngIf -->
+        <ion-spinner name="crescent" slot="start" [class.ion-hide]="!isLoadingQr"></ion-spinner>
+        <ion-icon name="qr-code" ios="qr-code" md="qr-code" slot="start" [class.ion-hide]="isLoadingQr"></ion-icon>
+        <span [class.ion-hide]="isLoadingQr">Generar Código QR</span>
+        <span [class.ion-hide]="!isLoadingQr">Generando QR...</span>
+      </ion-button>
+
+      <!-- 🏠 Botón de Regresar al Inicio (se muestra únicamente cuando el QR ya es visible gracias a [class.ion-hide]) -->
+      <ion-button expand="block" shape="round" class="action-btn home-btn" [class.ion-hide]="!isQrVisible" (click)="goHome()">
+        <ion-icon name="home" ios="home" md="home" slot="start"></ion-icon>
+        Finalizar e Ir al Inicio
+      </ion-button>
+    </footer>
+
+  </div>
+</ion-content>

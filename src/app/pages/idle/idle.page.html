@@ -1,0 +1,90 @@
+<ion-content class="guelaguetza-idle-content" fullscreen="true">
+  <!-- Formas flotantes de fondo para darle un aspecto vivo, colorido y de festival -->
+  <div class="festival-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="kiosco-wrapper">
+    
+    <!-- Encabezado con Chip institucional y Logo -->
+    <header class="kiosco-header">
+      <ion-chip class="edition-chip">
+        <ion-icon name="sparkles"></ion-icon>
+        <ion-label>Edición Especial Guelaguetza 2026</ion-label>
+      </ion-chip>
+      <img src="assets/img/logo1.png" alt="ANA Experience Logo" class="brand-logo" />
+    </header>
+
+    <!-- Título Principal Muy Llamativo -->
+    <section class="hero-section">
+      <h1 class="hero-title">
+        Vive la Fiesta de la <span class="text-gradient">Guelaguetza</span>
+      </h1>
+      <p class="hero-subtitle">
+        Inmortaliza tu visita con tecnología interactiva y llévate un recuerdo inolvidable de la máxima fiesta oaxaqueña.
+      </p>
+    </section>
+
+    <!-- Tarjetas de Pasos con Iconos Asegurados y Colores Vivos -->
+    <section class="features-section">
+      <div class="feature-card-custom">
+        
+        <div class="step-row">
+          <div class="icon-box pink">
+            <ion-icon name="camera"></ion-icon>
+          </div>
+          <div class="step-info">
+            <h3>1. Captura tu Fotografía</h3>
+            <p>Tómate una foto directamente en el tótem con la mejor iluminación.</p>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="icon-box yellow">
+            <ion-icon name="color-palette"></ion-icon>
+          </div>
+          <div class="step-info">
+            <h3>2. Fusión Turística IA</h3>
+            <p>El sistema te integra automáticamente con los paisajes más emblemáticos.</p>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="icon-box cyan">
+            <ion-icon name="qr-code"></ion-icon>
+          </div>
+          <div class="step-info">
+            <h3>3. Descarga Inmediata</h3>
+            <p>Obtén tu postal gratis al instante escaneando tu código QR personal.</p>
+          </div>
+        </div>
+
+        <div class="time-footer">
+          <ion-icon name="time"></ion-icon>
+          <span>Proceso rápido • Tiempo estimado: 45 segundos</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Botones de Acción de Alto Impacto -->
+    <section class="actions-section">
+       <ion-note color="danger"> PRECIONA EL NUMERO 1 EN EL TECLADO PARA : </ion-note>
+      <ion-button expand="block" shape="round" class="action-btn primary-action" (click)="startExperience()">
+        <ion-icon name="aperture" slot="start"></ion-icon>
+       
+        INICIAR EXPERIENCIA INTERACTIVA 
+        
+      </ion-button>
+
+    </section>
+
+    <!-- Footer Institucional -->
+    <footer class="kiosco-footer">
+      <p>Secretaría de Turismo • Estado de Oaxaca • Acceso Gratuito</p>
+    </footer>
+
+  </div>
+</ion-content>

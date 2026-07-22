@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="guelaguetza-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/idle" text="Regresar" color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="kiosk-title">Souvenirs y Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="guelaguetza-catalog-content" fullscreen="true">
+  
+  <div class="kiosco-catalog-wrapper">
+    
+    <!-- Encabezado de la Sección -->
+    <header class="catalog-header">
+      <ion-chip class="catalog-chip">
+        <ion-icon name="gift" ios="gift" md="gift"></ion-icon>
+        <ion-label>Colección Exclusiva Oaxaqueña</ion-label>
+      </ion-chip>
+      <h1>¡Lleva un recuerdo de la Guelaguetza!</h1>
+      <p>Exhibición automática de productos oficiales en el kiosco.</p>
+    </header>
+
+    <!-- Carrusel de Producto Gigante (Uno por uno) -->
+    <div class="featured-product-container">
+      
+      <!-- Botón Anterior -->
+      <ion-button fill="clear" class="nav-btn prev-btn" (click)="prevProduct()">
+        <ion-icon name="chevron-back" slot="icon-only"></ion-icon>
+      </ion-button>
+
+      <!-- Tarjeta Gigante Activa -->
+      <div class="giant-product-card">
+        @let currentItem = products[currentIndex];
+        
+        @if (currentItem.tag) {
+          <div class="promo-tag">
+            {{ currentItem.tag }}
+          </div>
+        }
+
+        <div class="giant-image-container">
+          <img [src]="currentItem.image" [alt]="currentItem.name" />
+        </div>
+
+        <div class="giant-info-container">
+          <h2 class="product-name">{{ currentItem.name }}</h2>
+          <div class="price-badge">
+            ${{ currentItem.price }} <span class="currency">MXN</span>
+          </div>
+          <span class="product-counter">Producto {{ currentIndex + 1 }} de {{ products.length }}</span>
+        </div>
+      </div>
+
+      <!-- Botón Siguiente -->
+      <ion-button fill="clear" class="nav-btn next-btn" (click)="nextProduct()">
+        <ion-icon name="chevron-forward" slot="icon-only"></ion-icon>
+      </ion-button>
+
+    </div>
+
+    <!-- Puntos de Navegación Interactivos -->
+    <div class="pagination-dots">
+      @for (item of products; track item.id; let i = $index) {
+        <span class="dot" [class.active]="i === currentIndex" (click)="goToProduct(i)"></span>
+      }
+    </div>
+
+    <!-- Footer Institucional -->
+    <footer class="catalog-footer">
+      <p>Recuerdos oficiales • Oaxaca 2026</p>
+    </footer>
+
+  </div>
+</ion-content>

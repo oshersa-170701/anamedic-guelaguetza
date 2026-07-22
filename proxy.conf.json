@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://anahealthtech.com/guelaguetza-v2",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": "/api"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<ion-content class="guelaguetza-generating-content" fullscreen="true">
+  <div class="kiosco-generating-wrapper">
+    
+    <!-- Encabezado Institucional -->
+    <header class="generating-header">
+      <ion-chip class="generating-chip">
+        <ion-icon name="color-palette" ios="color-palette" md="color-palette"></ion-icon>
+        <ion-label>Procesando Recuerdo</ion-label>
+      </ion-chip>
+      <img src="assets/img/logo1.png" alt="ANA Experience Logo" class="brand-logo" />
+    </header>
+
+    <!-- Contenido Central de Carga -->
+    <section class="generating-hero-section">
+      <h1 class="generating-title">
+        La Inteligencia Artificial<br>
+        está creando tu fotografía
+      </h1>
+      <p class="generating-subtitle">
+        Fusionando tu imagen con la grandeza y magia de Oaxaca.
+      </p>
+
+      <!-- Spinner y Estado con Tarjeta Estética -->
+      <div class="generating-card-box">
+        <div class="spinner-container">
+          <ion-spinner name="crescent" color="primary"></ion-spinner>
+        </div>
+
+        <p class="status-message">{{ currentMessage }}</p>
+
+        <!-- Barra de Progreso Personalizada Oaxaqueña -->
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" [style.width.%]="progressPercent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Institucional -->
+    <footer class="generating-footer">
+      <p>Guelaguetza 2026 • Un momento inolvidable</p>
+    </footer>
+
+  </div>
+</ion-content>

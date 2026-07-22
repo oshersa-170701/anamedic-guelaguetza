@@ -1,0 +1,36 @@
+<ion-content class="guelaguetza-camera-content" fullscreen="true">
+  <div class="kiosco-camera-wrapper">
+    
+    <!-- Encabezado de Instrucción -->
+    <header class="camera-header">
+      <ion-chip class="camera-chip">
+        <ion-icon name="camera" ios="camera" md="camera"></ion-icon>
+        <ion-label>Fotografía Interactiva</ion-label>
+      </ion-chip>
+      <h1 class="camera-title">Colócate frente a la cámara</h1>
+      <p class="camera-subtitle">
+        Sonríe y mantente dentro del recuadro. La foto se tomará automáticamente en <strong>{{ countdown }}s</strong>.
+      </p>
+    </header>
+
+    <!-- Contenedor del Feed de la Cámara Redimensionado -->
+    <div class="camera-view-container">
+      <div class="camera-frame-border">
+        <video #videoElement autoplay muted playsinline class="camera-video"></video>
+        <canvas #canvasElement style="display: none;"></canvas>
+
+        <!-- Overlay de Conteo Regresivo Animado -->
+        <div class="countdown-overlay" *ngIf="showCountdown">
+          <span class="countdown-number animate__animated animate__bounceIn">{{ countdown }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicador Footer -->
+    <footer class="camera-footer-hint">
+      <ion-icon name="information-circle-outline" ios="information-circle-outline" md="information-circle-outline"></ion-icon>
+      <span>Presiona la tecla <strong>"1"</strong> para regresar al inicio</span>
+    </footer>
+
+  </div>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-content class="ion-text-center qr-background">
+  <div class="fullscreen-container">
+
+    <img src="assets/img/logo.png" alt="ANA Experience Logo" class="logo" />
+
+    <h1 class="title">¡Tu fotografía está lista!</h1>
+
+    <p class="subtitle">
+      Escanea el código QR o escribe el código para descargar tu fotografía.<br>
+      Permanecerá disponible durante los próximos días.
+    </p>
+
+    <!-- Imagen QR -->
+    <div class="qr-card" *ngIf="qrImageUrl">
+      <img [src]="qrImageUrl" alt="Código QR de Descarga" class="qr-image" />
+    </div>
+
+    <!-- Código de Descarga -->
+    <div class="code-container">
+      <p class="code-label">Código de descarga</p>
+      <div class="code-value">{{ downloadCode }}</div>
+      <p class="url-text">{{ downloadUrl }}</p>
+    </div>
+
+    <!-- Botón Finalizar -->
+    <ion-button color="success" size="large" class="finish-btn" (click)="finish()">
+      Finalizar
+    </ion-button>
+
+  </div>
+</ion-content>
