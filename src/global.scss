@@ -46,7 +46,18 @@ ion-card, .card, .main-container {
   background: #ffffff !important;
   color: #1a1a1a !important;
 }
-/* Blindaje absoluto para botones de acción e íconos en producción */
+
+/* --- BLINDAJE ABSOLUTO DE COMPONENTES IONIC EN PRODUCCIÓN --- */
+ion-button {
+  --border-radius: 16px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  min-height: 54px;
+  display: block;
+  width: 100%;
+}
+
 ion-button.action-btn.primary-action {
   --background: #2e7d32 !important;
   --background-hover: #1b5e20 !important;
@@ -55,10 +66,13 @@ ion-button.action-btn.primary-action {
   color: #ffffff !important;
   opacity: 1 !important;
   visibility: visible !important;
-  display: flex !important;
+  display: block !important;
+  height: 54px !important;
 }
 
 ion-icon {
   visibility: visible !important;
   opacity: 1 !important;
+  font-size: 1.3rem;
+  display: inline-block;
 }
