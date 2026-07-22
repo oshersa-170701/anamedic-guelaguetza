@@ -80,7 +80,7 @@ export class RegisterPage implements OnInit {
       },
       error: (err) => {
         loading.dismiss();
-        console.error('Error en registerSession:', err);
+        //console.error('Error en registerSession:', err);
         this.showToast('Error de conexión con el servidor.', 'danger');
       }
     });

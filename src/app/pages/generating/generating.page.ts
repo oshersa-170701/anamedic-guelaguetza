@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { SessionStateService } from 'src/app/core/services/session-state';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-generating',
@@ -14,7 +15,7 @@ import { SessionStateService } from 'src/app/core/services/session-state';
 })
 export class GeneratingPage implements OnInit {
 
-  public currentMessage: string = '✨ Preparando tu fotografía...';
+  public currentMessage: string = ' Preparando tu fotografía...';
   public progressPercent: number = 30;
 
   constructor(
@@ -53,7 +54,7 @@ export class GeneratingPage implements OnInit {
       const formData = new FormData();
       formData.append('image', imageBlob, 'capture.jpg');
 
-      const response = await fetch('http://localhost:8000/api/generate_image', {
+      const response = await fetch(`${environment.apiUrl}/api/generate_image`, {
         method: 'POST',
         body: formData
       });
@@ -65,7 +66,7 @@ export class GeneratingPage implements OnInit {
       }
 
       // 3. FastAPI nos regresa la ruta de la imagen procesada
-      const aiImageUrl = `http://localhost:8000/${data.ai_image}`;
+      const aiImageUrl = `${environment.apiUrl}/${data.ai_image}`;
 
       this.progressPercent = 90;
 

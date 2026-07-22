@@ -7,6 +7,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { SessionStateService } from 'src/app/core/services/session-state';
 import { addIcons } from 'ionicons';
 import { sparkles, cameraReverse, qrCode, downloadOutline, home } from 'ionicons/icons';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-preview',
@@ -85,7 +86,7 @@ export class PreviewPage implements OnInit {
       const formData = new FormData();
       formData.append('ai_image', activeImagePath);
 
-      const response = await fetch('http://localhost:8000/api/register_session', {
+      const response = await fetch(`${environment.apiUrl}/api/register_session`, {
         method: 'POST',
         body: formData
       });
@@ -93,7 +94,7 @@ export class PreviewPage implements OnInit {
       const data = await response.json();
 
       if (data.success) {
-        this.qrCodeUrl = `http://localhost:8000/${data.qr}`;
+        this.qrCodeUrl = `${environment.apiUrl}/${data.qr}`;
         this.downloadLink = data.url;
         this.isQrVisible = true; 
         
