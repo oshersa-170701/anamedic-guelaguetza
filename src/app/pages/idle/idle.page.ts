@@ -23,8 +23,7 @@ export class IdlePage implements OnInit, OnDestroy {
     private router: Router,
     private sessionState: SessionStateService
   ) { 
-    addIcons({ sparkles, camera, colorPalette, qrCode, time, aperture, images }); 
-  }
+addIcons({ sparkles, camera, colorPalette, qrCode, time, aperture, images });  }
 
   ngOnInit() {
     this.sessionState.resetSession();
