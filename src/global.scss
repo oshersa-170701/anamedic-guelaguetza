@@ -34,4 +34,15 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
+/* Forzar diseño claro y colores idénticos al entorno local en producción */
+body, ion-content, .ion-page {
+  --background: #fffdf5 !important;
+  background-color: #fffdf5 !important;
+  color: #1a1a1a !important;
+}
 
+/* Forzar el contenedor principal de la tarjeta de inicio */
+ion-card, .card, .main-container {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+}
