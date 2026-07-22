@@ -46,3 +46,19 @@ ion-card, .card, .main-container {
   background: #ffffff !important;
   color: #1a1a1a !important;
 }
+/* Blindaje absoluto para botones de acción e íconos en producción */
+ion-button.action-btn.primary-action {
+  --background: #2e7d32 !important;
+  --background-hover: #1b5e20 !important;
+  --color: #ffffff !important;
+  background-color: #2e7d32 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+ion-icon {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
