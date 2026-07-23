@@ -22,10 +22,12 @@ addIcons({
 });
 
 bootstrapApplication(AppComponent, {
-  providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    provideIonicAngular(),
-    provideHttpClient(),
-    provideRouter(routes, withPreloading(PreloadAllModules)),
-  ],
+ providers: [
+  { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+  provideIonicAngular({
+    mode: 'ios'
+  }),
+  provideHttpClient(),
+  provideRouter(routes, withPreloading(PreloadAllModules)),
+],
 });
