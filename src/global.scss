@@ -59,14 +59,6 @@ ion-button {
 }
 
 
-ion-icon {
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-size: 1.3rem;
-  display: inline-block;
-}
-
-
 /* Forzar renderizado correcto de las cajas de íconos en producción */
 .icon-box {
   display: flex !important;
@@ -98,4 +90,10 @@ ion-button.action-btn.primary-action {
   color: #ffffff !important;
   display: block !important;
   height: 54px !important;
+}
+/* Forzar la carga de ion-icons desde la ruta publica de assets */
+ion-icon {
+  visibility: visible !important;
+  opacity: 1 !important;
+  --ionicon-stroke-width: 32px;
 }

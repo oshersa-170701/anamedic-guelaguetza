@@ -6,9 +6,8 @@ import { routes } from './app/app.routes';
 import { addIcons } from 'ionicons';
 import { sparkles, aperture, camera, colorPalette, qrCode, time, images, gift, chevronBack, chevronForward } from 'ionicons/icons';
 import { provideHttpClient } from '@angular/common/http';
-import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Registrar los íconos de forma estricta y global
+// Registrar los iconos explícitamente para el motor de producción
 addIcons({
   'sparkles': sparkles,
   'aperture': aperture,
@@ -22,15 +21,10 @@ addIcons({
   'chevron-forward': chevronForward
 });
 
-// Inicializar los componentes web de Ionic para producción
-defineCustomElements(window);
-
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    provideIonicAngular({
-      mode: 'ios' // Forzar el diseño limpio y moderno idéntico en todas las plataformas
-    }),
+    provideIonicAngular(),
     provideHttpClient(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
   ],
