@@ -65,11 +65,7 @@ ion-icon {
   font-size: 1.3rem;
   display: inline-block;
 }
-/* --- BLINDAJE GLOBAL PARA PRODUCCIÓN ESTÁTICA --- */
-ion-content {
-  --background: #fffbf5 !important;
-  background-color: #fffbf5 !important;
-}
+
 
 /* Forzar renderizado correcto de las cajas de íconos en producción */
 .icon-box {
@@ -82,7 +78,18 @@ ion-content {
   &.cyan { background: #e1f5fe !important; border: 1px solid #81d4fa !important; }
 }
 
-/* Forzar dimensiones exactas del botón principal verde */
+
+/* --- BLINDAJE DE ESTILOS PARA PRODUCCIÓN --- */
+ion-content {
+  --background: #fffbf5 !important;
+  background-color: #fffbf5 !important;
+}
+
+.feature-card-custom {
+  background: #ffffff !important;
+  color: #1a202c !important;
+}
+
 ion-button.action-btn.primary-action {
   --background: #2e7d32 !important;
   --background-hover: #1b5e20 !important;
@@ -90,8 +97,5 @@ ion-button.action-btn.primary-action {
   background-color: #2e7d32 !important;
   color: #ffffff !important;
   display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
   height: 54px !important;
-  min-height: 54px !important;
 }
