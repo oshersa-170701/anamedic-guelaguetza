@@ -11,7 +11,7 @@ import { CatalogPage } from './pages/catalog/catalog.page';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'catalog',
+    redirectTo: 'idle',
     pathMatch: 'full',
   },
   {
