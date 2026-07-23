@@ -118,7 +118,12 @@
     "glob": "_redirects",
     "input": ".",
     "output": "/"
-  }
+  },
+  {
+  "glob": "**/*",
+  "input": "node_modules/ionicons/dist/ionicons/svg",
+  "output": "svg"
+}
 ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
             "scripts": []
